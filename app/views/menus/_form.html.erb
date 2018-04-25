@@ -1,0 +1,28 @@
+<%= form_with(model: menu, local: true) do |form| %>
+  <% if menu.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(menu.errors.count, "error") %> prohibited this menu from being saved:</h2>
+
+      <ul>
+      <% menu.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  
+  <div class="feild">
+    Lunch:
+    <%= check_box_tag 'menu[lunch]', 'lunch' %>
+    </div>
+    
+    <div class="feild">
+    Dinner:
+    
+    <%= check_box_tag 'menu[dinner]', 'dinner' %>
+    </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

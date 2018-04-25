@@ -1,0 +1,27 @@
+<%= form_with(model: restolina, local: true) do |form| %>
+  <% if restolina.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(restolina.errors.count, "error") %> prohibited this restolina from being saved:</h2>
+
+      <ul>
+      <% restolina.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :login %>
+    <%= form.text_field :login, id: :restolina_login %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Menu %>
+    <%= form.text_field :Menu, id: :restolina_Menu %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

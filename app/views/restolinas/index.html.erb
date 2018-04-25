@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Restolinas</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Login</th>
+      <th>Menu</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @restolinas.each do |restolina| %>
+      <tr>
+        <td><%= restolina.login %></td>
+        <td><%= restolina.Menu %></td>
+        <td><%= link_to 'Show', restolina %></td>
+        <td><%= link_to 'Edit', edit_restolina_path(restolina) %></td>
+        <td><%= link_to 'Destroy', restolina, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Restolina', new_restolina_path %>

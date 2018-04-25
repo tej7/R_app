@@ -1,0 +1,2 @@
+class Restolina < ApplicationRecord
+end
